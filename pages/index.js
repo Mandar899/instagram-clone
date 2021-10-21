@@ -1,9 +1,10 @@
 import Head from "next/head";
+import Feed from "../components/Feed";
 import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-[#FAFAFA] h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-200">
       <Head>
         <title>Instagram</title>
         <link rel="icon" href="/favicon.ico" />
@@ -11,7 +12,9 @@ export default function Home() {
 
       {/* Header */}
       <Header />
+
       {/* Feed */}
+      <Feed />
 
       {/* Modal */}
     </div>

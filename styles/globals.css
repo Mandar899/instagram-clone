@@ -11,4 +11,7 @@ body {
   .navBtn {
     @apply hidden h-6 md:inline-flex cursor-pointer transition-all duration-150 hover:scale-125 ease-out;
   }
+  .btn {
+    @apply h-7 hover:scale-125 cursor-pointer transition-all duration-150 ease-out text-gray-700;
+  }
 }

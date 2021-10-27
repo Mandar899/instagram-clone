@@ -22,6 +22,8 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import Moment from "react-moment";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Post({ id, username, userImg, img, caption }) {
   const { data: session } = useSession();
@@ -72,12 +74,23 @@ function Post({ id, username, userImg, img, caption }) {
     e.preventDefault();
     const commentToSend = comment;
     setComment("");
-    await addDoc(collection(db, "posts", id, "comments"), {
+    const res = await addDoc(collection(db, "posts", id, "comments"), {
       comment: commentToSend,
       userImg: session.user.image,
       username: session.user.username,
       timestamp: serverTimestamp(),
     });
+    if (res) {
+      toast("You posted a comment.", {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   return (
@@ -118,6 +131,19 @@ function Post({ id, username, userImg, img, caption }) {
           <BookmarkIcon className="btn" />
         </div>
       )}
+
+      {/* Toast */}
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       {/* caption */}
       <p className="p-5 truncate">

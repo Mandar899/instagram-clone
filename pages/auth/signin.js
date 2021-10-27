@@ -5,17 +5,19 @@ function SignIn({ providers }) {
   return (
     <div className="bg-[#fafafa] min-h-screen">
       <Header />
-      <div className="flex min-h-screen flex-col items-center justify-center py-2 -mt-36 px-14 text-center">
+      <div className="flex min-h-screen flex-col items-center justify-center py-2 mb-2 -mt-14 px-14 text-center">
         <img
           className="w-80"
           src="https://links.papareact.com/ocw"
           alt="instagram logo"
         />
-        <p className="font-semibold italic">
-          This is not a REAL app, it is just instgram but better
-        </p>
+        <img
+          className="h-80"
+          src="/insta-logo.png"
+          alt="instagram mobile logo"
+        />
 
-        <div className="mt-24">
+        <div className="mt-10">
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
               <button

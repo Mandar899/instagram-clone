@@ -14,7 +14,11 @@ function Stories() {
     setSuggestions(suggestions);
   }, []);
   return (
-    <div className="flex space-x-5 p-4 bg-white mt-8 border border-gray-200 rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-200">
+    <div
+      className={`flex space-x-5 p-4 bg-white mt-8 border border-gray-200 rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-200 ${
+        !session && "filter blur-sm"
+      }`}
+    >
       {session && (
         <Story img={session.user.image} username={session.user.username} />
       )}

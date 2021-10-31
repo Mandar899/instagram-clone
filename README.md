@@ -1,9 +1,10 @@
 # Instagram Clone
 
-This clone is built using React. The frontend is built using Next.js & Tailwind CSS. We are using `faker.js` to generate fake data for instagram stories.
+This clone is built using React. The frontend is built using Next.js & Tailwind CSS. We are using `faker.js` to generate fake data for instagram stories. And firebase as database to store all the uploaded posts.
 
 ## Features
 
+- Next.JS Authentication
 - Image Upload Functionality
 - Like & Comment
 - SSR
